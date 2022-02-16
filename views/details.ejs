@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wifi Kuy!</title>
+    <link rel="icon" href="img/logo.jpeg" type="image/logo" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3><img src="img/logo.jpeg" alt="logo" />Wifi <span>Kuy!</span></h3>
+      </div>
+    
+    </header>
+    <!--header area end-->
+    
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="img/default-profile.jpg" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="/index"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/details"><i class="fas fa-table"></i><span>Details</span></a>
+        <a href="/location"><i class="fas fa-map-marked-alt"></i><span>Location</span></a>
+        <a href="/wlan"><i class="fas fa-wifi"></i><span>WLAN WAC</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="img/default-profile.jpg" class="profile_image" alt="">
+        <h4>User</h4>
+      </div>
+      <a href="/index"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="/details"><i class="fas fa-table"></i><span>Details</span></a>
+      <a href="/location"><i class="fas fa-map-marked-alt"></i><span>Location</span></a>
+      <a href="/wlan"><i class="fas fa-wifi"></i><span>WLAN WAC</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+    </div>
+    <!--sidebar end-->
+    <div class="content">
+      <h2>Details</h2>
+      <div class="table">
+        <table class="table table-fluid" id="myTable">
+          <thead>
+          <tr><th>AP Name</th><th>AP SN</th><th>AP MAC</th><th>AP Type</th><th>WITEL</th><th>Loc ID</th><th>Location</th><th>WAC</th></tr>
+          </thead>
+          <tbody>
+          <%details.forEach(detail => {%>
+          <tr>
+            <td><%= detail.apname %></td>
+            <td><%= detail.apsn %></td>
+            <td><%= detail.apmac %></td>
+            <td><%= detail.aptype %></td>
+            <td><%= detail.witel %></td>
+            <td><%= detail.locid %></td>
+            <td><%= detail.location %></td>
+            <td><%= detail.wac %></td>
+          </tr>
+          <%})%>
+          </tbody>
+          </table>
+      </div>
+
+    </div>
+    <script>
+      $(document).ready( function () {
+      $('#myTable').DataTable();
+  } );
+      </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+
+  </body>
+</html>
