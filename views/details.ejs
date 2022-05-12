@@ -64,7 +64,7 @@
       <div class="table">
         <table class="table table-fluid" id="myTable">
           <thead>
-          <tr><th>AP Name</th><th>AP SN</th><th>AP MAC</th><th>AP Type</th><th>WITEL</th><th>Loc ID</th><th>Location</th><th>WAC</th></tr>
+          <tr><th>AP Name</th><th>AP SN</th><th>AP MAC</th><th>AP Type</th><th>WITEL</th><th>Loc ID</th><th>Location</th><th>WAC</th><th>Status</th></tr>
           </thead>
           <tbody>
           <%details.forEach(detail => {%>
@@ -77,6 +77,7 @@
             <td><%= detail.locid %></td>
             <td><%= detail.location %></td>
             <td><%= detail.wac %></td>
+            <td><%= detail.status %></td>
           </tr>
           <%})%>
           </tbody>
@@ -86,7 +87,12 @@
     </div>
     <script>
       $(document).ready( function () {
-      $('#myTable').DataTable();
+      $('#myTable').DataTable({
+        "search":{
+          "smart":false,
+          "caseInsensitive":false
+        }
+      });
   } );
       </script>
     <script type="text/javascript">

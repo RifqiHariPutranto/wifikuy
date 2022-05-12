@@ -26,6 +26,9 @@ const detailSchema = new Schema({
     wac: {
         type: String
     },
+    status: {
+        type: String
+    },
 });
 
 const Detail = mongoose.model('Detail', detailSchema);

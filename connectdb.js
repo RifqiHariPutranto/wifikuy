@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Detail = require('./models/blog');
-const Location = require('./models/location');
+const Wlancount = require('./models/wlancount');
 
 const app = express();
 
@@ -33,17 +33,17 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     })
 
     app.get('/location', (req, res) => {
-        Location.find()
+        res.render('location');
+    })
+
+    app.get('/wlan', (req, res) => {
+        Wlancount.find()
             .then((result) => {
-                res.render('location', {locations:result})
+                res.render('wlan', {wlancounts:result})
             })
             .catch((err) => {
                 console.log(err);
             })
-    })
-
-    app.get('/wlan', (req, res) => {
-        res.render('wlan');
     })
 
     app.get('/details', (req, res) => {

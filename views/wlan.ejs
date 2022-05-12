@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
   </head>
   <body>
 
@@ -55,10 +56,42 @@
     <!--sidebar end-->
     <div class="content">
       <h2>WLAN WAC</h2>
+      <div class="table">
+        <table class="table table-fluid" id="myTable">
+          <thead>
+          <tr><th>WISM1</th><th>WISM2</th><th>WISM3</th><th>WISM4</th><th>WISM5</th><th>WISM6</th><th>TOTAL</th></tr>
+          </thead>
+          <tbody>
+          <%wlancounts.forEach(wlancount => {%>
+          <tr>
+            <td><%= wlancount.wism1 %></td>
+            <td><%= wlancount.wism2 %></td>
+            <td><%= wlancount.wism3 %></td>
+            <td><%= wlancount.wism4 %></td>
+            <td><%= wlancount.wism5 %></td>
+            <td><%= wlancount.wism6 %></td>
+            <td><%= wlancount.total %></td>
+          </tr>
+          <%})%>
+          </tbody>
+          </table>
+      </div>
     </div>
 
     
-    
+    <script>
+      $(document).ready( function () {
+      $('#myTable').DataTable({
+        paging:false,
+        searching:false,
+        "columnDefs": [
+        {"className": "dt-center", "targets": "_all"}
+      ]
+  }
+
+      );
+  } );
+      </script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('.nav_btn').click(function(){
