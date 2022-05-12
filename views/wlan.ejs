@@ -59,11 +59,12 @@
       <div class="table">
         <table class="table table-fluid" id="myTable">
           <thead>
-          <tr><th>WISM1</th><th>WISM2</th><th>WISM3</th><th>WISM4</th><th>WISM5</th><th>WISM6</th><th>TOTAL</th></tr>
+          <tr><th>No.</th><th>WISM1</th><th>WISM2</th><th>WISM3</th><th>WISM4</th><th>WISM5</th><th>WISM6</th><th>TOTAL</th></tr>
           </thead>
           <tbody>
           <%wlancounts.forEach(wlancount => {%>
           <tr>
+            <td><%= wlancount._id %></td>
             <td><%= wlancount.wism1 %></td>
             <td><%= wlancount.wism2 %></td>
             <td><%= wlancount.wism3 %></td>
@@ -85,11 +86,10 @@
         paging:false,
         searching:false,
         "columnDefs": [
-        {"className": "dt-center", "targets": "_all"}
-      ]
-  }
-
-      );
+          {"className": "dt-center", "targets": "_all"},
+          {"visible":false, "targets": 0}],
+        "order":[[ 0, "asc" ]]
+  });
   } );
       </script>
     <script type="text/javascript">
