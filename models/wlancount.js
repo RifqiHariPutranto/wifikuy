@@ -5,6 +5,9 @@ const detailSchema = new Schema({
     _id: {
         type: String
     },
+    wac: {
+        type: String
+    },
     wism1: {
         type: Number
     },

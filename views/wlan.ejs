@@ -59,12 +59,13 @@
       <div class="table">
         <table class="table table-fluid" id="myTable">
           <thead>
-          <tr><th>No.</th><th>WISM1</th><th>WISM2</th><th>WISM3</th><th>WISM4</th><th>WISM5</th><th>WISM6</th><th>TOTAL</th></tr>
+          <tr><th>No.</th><th>WAC</th><th>MODUL1</th><th>MODUL2</th><th>MODUL3</th><th>MODUL4</th><th>MODUL5</th><th>MODUL6</th><th>TOTAL</th></tr>
           </thead>
           <tbody>
           <%wlancounts.forEach(wlancount => {%>
           <tr>
             <td><%= wlancount._id %></td>
+            <td><%= wlancount.wac %></td>
             <td><%= wlancount.wism1 %></td>
             <td><%= wlancount.wism2 %></td>
             <td><%= wlancount.wism3 %></td>
