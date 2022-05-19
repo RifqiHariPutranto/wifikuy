@@ -29,16 +29,19 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     });
 
     app.get('/index', (req, res) => {
+        console.log('Open Dashboard');
         res.render('index');
     })
 
     app.get('/location', (req, res) => {
+        console.log('Open Location');
         res.render('location');
     })
 
     app.get('/wlan', (req, res) => {
         Wlancount.find()
             .then((result) => {
+                console.log('Open WLAN');
                 res.render('wlan', {wlancounts:result})
             })
             .catch((err) => {
@@ -49,6 +52,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     app.get('/details', (req, res) => {
         Detail.find()
             .then((result) => {
+                console.log('Open Details');
                 res.render('details', {details:result})
             })
             .catch((err) => {
