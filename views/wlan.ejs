@@ -56,6 +56,7 @@
     <!--sidebar end-->
     <div class="content">
       <h2>WLAN WAC</h2>
+      <p id="demo"></p>
       <div class="table">
         <table class="table table-fluid" id="myTable">
           <thead>
@@ -80,7 +81,10 @@
       </div>
     </div>
 
-    
+    <script>
+      const date = new Date(document.lastModified);
+      document.getElementById("demo").innerHTML = date;
+    </script>
     <script>
       $(document).ready( function () {
       $('#myTable').DataTable({
@@ -94,63 +98,63 @@
               modul5 = parseFloat(data[6]),
               modul6 = parseFloat(data[7]);
           //Coloring kolom modul 1
-  	      if(modul1>= 400){
+  	      if(modul1>= 450){
     	      $(row).find('td:eq(1)').css('background-color', 'pink');
           }
-          if(modul1< 400){
+          if(modul1< 450){
     	      $(row).find('td:eq(1)').css('background-color', 'yellow');
           }
-          if(modul1< 350){
+          if(modul1< 400){
     	      $(row).find('td:eq(1)').css('background-color', 'lightgreen');
           }
           //Coloring kolom modul 2
-          if(modul2>= 400){
+          if(modul2>= 450){
     	      $(row).find('td:eq(2)').css('background-color', 'pink');
           }
-          if(modul2< 400){
+          if(modul2< 450){
     	      $(row).find('td:eq(2)').css('background-color', 'yellow');
           }
-          if(modul2< 350){
+          if(modul2< 400){
     	      $(row).find('td:eq(2)').css('background-color', 'lightgreen');
           }
           //Coloring kolom modul 3
-          if(modul3>= 400){
+          if(modul3>= 450){
     	      $(row).find('td:eq(3)').css('background-color', 'pink');
           }
-          if(modul3< 400){
+          if(modul3< 450){
     	      $(row).find('td:eq(3)').css('background-color', 'yellow');
           }
-          if(modul3< 350){
+          if(modul3< 400){
     	      $(row).find('td:eq(3)').css('background-color', 'lightgreen');
           }
           //Coloring kolom modul 4
-          if(modul4>= 400){
+          if(modul4>= 450){
     	      $(row).find('td:eq(4)').css('background-color', 'pink');
           }
-          if(modul4< 400){
+          if(modul4< 450){
     	      $(row).find('td:eq(4)').css('background-color', 'yellow');
           }
-          if(modul4< 350){
+          if(modul4< 400){
     	      $(row).find('td:eq(4)').css('background-color', 'lightgreen');
           }
           //Coloring kolom modul 5
-          if(modul5>= 400){
+          if(modul5>= 450){
     	      $(row).find('td:eq(5)').css('background-color', 'pink');
           }
-          if(modul5< 400){
+          if(modul5< 450){
     	      $(row).find('td:eq(5)').css('background-color', 'yellow');
           }
-          if(modul5< 350){
+          if(modul5< 400){
     	      $(row).find('td:eq(5)').css('background-color', 'lightgreen');
           }
           //Coloring kolom modul 6
-          if(modul6>= 400){
+          if(modul6>= 450){
     	      $(row).find('td:eq(6)').css('background-color', 'pink');
           }
-          if(modul6< 400){
+          if(modul6< 450){
     	      $(row).find('td:eq(6)').css('background-color', 'yellow');
           }
-          if(modul6< 350){
+          if(modul6< 400){
     	      $(row).find('td:eq(6)').css('background-color', 'lightgreen');
           }
         },

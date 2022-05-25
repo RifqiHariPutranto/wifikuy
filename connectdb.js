@@ -59,36 +59,3 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
                 console.log(err);
             })
     })
-
-// test routes NOT IMPORTANT
-    app.get('/add-detail', (req, res) => {
-        const detail = new Detail({
-            apname:'JKTCKG83617-N/TLK-CI-69886',
-            apsn:'FGL1882S7P1',
-            apmac:'00:07:F6:16:C2:90',
-            aptype:'CISCO',
-            witel:'JAKARTA BARAT',
-            locid:'JKTCKG83617-N',
-            location:'r tamu || CIPONDOH GONDRONG95 153876',
-            wac:'10.16.53.110'
-        });
-
-        detail.save()
-            .then((result) => {
-                res.send(result)
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        
-    });
-    
-    app.get('/all-detail', (req, res) => {
-        Detail.find()
-            .then((result) => {
-                res.send(result);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    });
