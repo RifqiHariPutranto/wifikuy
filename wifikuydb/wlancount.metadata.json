@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8bbe64bb9c0a43b18a5e7a75beb9178c","collectionName":"wlancount","type":"collection"}

@@ -13,6 +13,6 @@ ftp_client.on('ready', function() {
    ftp_client.get('apdetail.csv', function(err, stream) {
      if (err) throw err;
      stream.once('close', function() { ftp_client.end(); });
-     stream.pipe(fs.createWriteStream('copyapdetail.csv'));
+     stream.pipe(fs.createWriteStream('apdetail.csv'));
    });
  });
