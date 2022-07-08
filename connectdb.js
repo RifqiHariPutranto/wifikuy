@@ -25,7 +25,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // details routes
 
     app.get('', (req, res) => {
-        res.redirect('/index');
+        res.redirect('/wlan');
     });
 
     app.get('/index', (req, res) => {
